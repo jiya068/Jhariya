@@ -1,0 +1,21 @@
+.env
+.env.*
+!.env.example
+node_modules/
+dist/
+build/
+.next/
+*.log
+
+# Local database and application data
+backend/data/
+backend/uploads/
+
+# Dependencies and generated files
+node_modules/
+dist/
+build/
+.next/
+
+# Logs
+*.log

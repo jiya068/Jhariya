@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jhariya - Exquisite Indian Kurtis & Ethnic Wear</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Main Style -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Top Announcement Bar -->
+    <div class="announcement-bar"></div>
+
+    <!-- Main Navigation Header -->
+    <header class="site-header">
+        <div class="header-container">
+            <!-- Left Side Actions -->
+            <div class="header-left">
+                <button id="hamburger-menu" class="icon-btn" aria-label="Open Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+                <button id="account-btn" class="icon-btn" aria-label="User Account">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Brand Logo & Name Center -->
+            <div class="header-center">
+                <a href="#" class="brand-identity">
+                    <img src="assets/logo.png" alt="Jhariya Monogram" class="logo-image">
+                    <span class="brand-name">JHARIYA</span>
+                </a>
+            </div>
+
+            <!-- Right Side Actions -->
+            <div class="header-right">
+                <button id="search-btn" class="icon-btn" aria-label="Search Shop">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+                <button id="cart-btn" class="icon-btn" aria-label="Shopping Bag">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Toolbar: Sort & Filter -->
+    <section class="toolbar-section">
+        <div class="toolbar-container">
+            <div class="toolbar-action" id="filter-toggle">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+                </svg>
+                <span>Filter By</span>
+            </div>
+            <div class="toolbar-divider"></div>
+            <div class="toolbar-action" id="sort-toggle">
+                <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="12" y1="5" x2="12" y2="19"></line>
+                    <polyline points="19 12 12 19 5 12"></polyline>
+                </svg>
+                <span>Sort By</span>
+            </div>
+        </div>
+        <!-- Active Filters Display -->
+        <div class="active-filters-row" id="active-filters-row"></div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <!-- Filter Panel (Collapsible dropdown block) -->
+        <div class="filter-panel" id="filter-panel">
+            <div class="filter-grid">
+                <div class="filter-group">
+                    <h4>Size</h4>
+                    <div class="size-bubble-grid">
+                        <button class="size-filter-btn" data-size="XXS">XXS</button>
+                        <button class="size-filter-btn" data-size="XS">XS</button>
+                        <button class="size-filter-btn" data-size="S">S</button>
+                        <button class="size-filter-btn" data-size="M">M</button>
+                        <button class="size-filter-btn" data-size="L">L</button>
+                        <button class="size-filter-btn" data-size="XL">XL</button>
+                        <button class="size-filter-btn" data-size="2XL">2XL</button>
+                        <button class="size-filter-btn" data-size="3XL">3XL</button>
+                        <button class="size-filter-btn" data-size="4XL">4XL</button>
+                        <button class="size-filter-btn" data-size="5XL">5XL</button>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h4>Price Range</h4>
+                    <label class="custom-radio"><input type="radio" name="price-range" value="all" checked> <span>All Prices</span></label>
+                    <label class="custom-radio"><input type="radio" name="price-range" value="0-999"> <span>Under ₹999</span></label>
+                    <label class="custom-radio"><input type="radio" name="price-range" value="0-1499"> <span>Under ₹1,499</span></label>
+                    <label class="custom-radio"><input type="radio" name="price-range" value="0-1999"> <span>Under ₹1,999</span></label>
+                </div>
+            </div>
+            <div class="filter-actions">
+                <button class="clear-all-btn" id="clear-filters-btn">Clear All</button>
+                <button class="apply-btn" id="apply-filters-btn">Apply Filters</button>
+            </div>
+        </div>
+
+        <!-- Sort Panel (Collapsible dropdown block) -->
+        <div class="sort-panel" id="sort-panel">
+            <ul class="sort-options">
+                <li data-sort="featured" class="active">Featured</li>
+                <li data-sort="price-low">Price: Low to High</li>
+                <li data-sort="price-high">Price: High to Low</li>
+                <li data-sort="rating">Customer Rating</li>
+                <li data-sort="newest">New Arrivals</li>
+            </ul>
+        </div>
+
+        <!-- Product Grid Area -->
+        <section class="products-section">
+            <div class="product-grid" id="product-grid">
+                <!-- Javascript will inject 10 product cards here dynamically -->
+            </div>
+
+            <!-- Sleek Pagination -->
+            <div class="pagination-container">
+                <button id="prev-page-btn" class="pagination-arrow" aria-label="Previous Page">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="pagination-pages" id="pagination-pages">
+                    <!-- Javascript will inject pagination indicators -->
+                </div>
+                <button id="next-page-btn" class="pagination-arrow" aria-label="Next Page">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <!-- Customer Reviews Testimonials Compartment -->
+        <section class="reviews-section">
+            <div class="section-divider"></div>
+            <div class="reviews-header">
+                <h2>Voices of Jhariya</h2>
+                <p>Loved, worn, and shared by beautiful souls across the world.</p>
+                <button class="outline-btn inline-btn" id="open-write-review-btn" style="margin-top: 16px; border-color: var(--brand-burgundy); color: var(--brand-burgundy); font-weight: 600;">✍️ Write a Review</button>
+            </div>
+
+            
+            <div class="reviews-wrapper">
+                <button class="review-nav-btn prev-review" aria-label="Previous Review">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="reviews-carousel" id="reviews-carousel">
+                    <!-- Carousel slides injected via JS -->
+                </div>
+                <button class="review-nav-btn next-review" aria-label="Next Review">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+            <div class="reviews-dots" id="reviews-dots"></div>
+        </section>
+    </main>
+
+    <!-- Side Slide-Out Menus / Drawers (Glassmorphism overlays) -->
+    
+    <!-- 1. Hamburger Menu Navigation Drawer -->
+    <div class="drawer-overlay" id="menu-drawer-overlay">
+        <div class="drawer drawer-left" id="menu-drawer">
+            <div class="drawer-header">
+                <h3>Explore Jhariya</h3>
+                <button class="close-drawer-btn" aria-label="Close Menu">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="drawer-content">
+                <nav class="drawer-nav">
+                    <ul>
+                        <li><a href="#" class="drawer-link" data-scroll="about-us">About Us</a></li>
+                        <li>
+                            <span class="drawer-dropdown-title">Categories <span class="arrow-down"></span></span>
+                            <ul class="drawer-submenu">
+                                <li><a href="#" class="drawer-submenu-link" data-filter="Style" data-val="Anarkali">Anarkali Suits</a></li>
+                                <li><a href="#" class="drawer-submenu-link" data-filter="Style" data-val="A-Line">A-Line Kurtis</a></li>
+                                <li><a href="#" class="drawer-submenu-link" data-filter="Style" data-val="Straight">Straight Kurtis</a></li>
+                                <li><a href="#" class="drawer-submenu-link" data-filter="Style" data-val="Chikankari">Chikankari Specials</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" class="drawer-link" data-sort-trigger="newest">New Arrivals</a></li>
+                        <li><a href="#" class="drawer-link" data-sort-trigger="rating">Best Sellers</a></li>
+                        <li><a href="#" class="drawer-link" data-scroll="track-order">Track Your Order</a></li>
+                        <li><a href="#" class="drawer-link" data-scroll="support">Customer Support</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. User Account Drawer -->
+    <div class="drawer-overlay" id="account-drawer-overlay">
+        <div class="drawer drawer-left" id="account-drawer">
+            <div class="drawer-header">
+                <h3>My Account</h3>
+                <button class="close-drawer-btn" aria-label="Close Account Panel">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="drawer-content">
+                <div class="account-forms-container">
+                    <div id="login-form-block">
+                        <p class="form-intro">Sign in with your email and password to view orders, track shipping, and manage your account.</p>
+                        <div id="login-error-msg" class="auth-error-box hidden" style="background: rgba(45, 11, 18, 0.05); border: 1px solid var(--brand-burgundy); color: var(--brand-burgundy); padding: 10px 12px; font-size: 0.8rem; font-family: Montserrat; margin-bottom: 15px; border-radius: 4px; display: flex; align-items: center; gap: 8px;">
+                            <span>⚠️</span>
+                            <span class="error-text"></span>
+                        </div>
+                        <form id="login-form">
+                            <div class="form-group">
+                                <label for="login-email">Email Address</label>
+                                <input type="email" id="login-email" required placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" required placeholder="••••••••">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="dark-btn block-btn">Sign In</button>
+                            </div>
+                        </form>
+                        <p class="form-switch-prompt">New to Jhariya? <a href="#" id="switch-to-signup">Create account</a></p>
+                    </div>
+
+                    <div id="signup-form-block" class="hidden">
+                        <p class="form-intro">Join Jhariya to receive early access to new designer collections.</p>
+                        <div id="signup-error-msg" class="auth-error-box hidden" style="background: rgba(45, 11, 18, 0.05); border: 1px solid var(--brand-burgundy); color: var(--brand-burgundy); padding: 10px 12px; font-size: 0.8rem; font-family: Montserrat; margin-bottom: 15px; border-radius: 4px; display: flex; align-items: center; gap: 8px;">
+                            <span>⚠️</span>
+                            <span class="error-text"></span>
+                        </div>
+                        <form id="signup-form">
+                            <div class="form-group">
+                                <label for="signup-name">Full Name</label>
+                                <input type="text" id="signup-name" required placeholder="Aarav Sharma">
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-email">Email Address</label>
+                                <input type="email" id="signup-email" required placeholder="name@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-password">Password</label>
+                                <input type="password" id="signup-password" required placeholder="Min 6 characters">
+                            </div>
+                            <div class="form-group">
+                                <label for="signup-phone">Phone Number</label>
+                                <input type="tel" id="signup-phone" required placeholder="+91 9876543210">
+                            </div>
+                            <div class="form-actions">
+                                <button type="submit" class="dark-btn block-btn">Register</button>
+                            </div>
+                        </form>
+                        <p class="form-switch-prompt">Already have an account? <a href="#" id="switch-to-login">Sign In</a></p>
+                    </div>
+
+                    <div id="user-profile-block" class="hidden">
+                        <div class="profile-card">
+                            <div class="profile-avatar">J</div>
+                            <h4 id="user-display-name">Jhariya Guest</h4>
+                            <p id="user-display-email">guest@jhariya.com</p>
+                        </div>
+                        <ul class="profile-links">
+                            <li><a href="#" class="profile-link-item" id="open-order-history-btn"><span class="icon">📦</span> Order History</a></li>
+                            <li><a href="#" class="profile-link-item"><span class="icon">📍</span> Saved Addresses</a></li>
+
+                            <li id="admin-panel-link-li" class="hidden"><a href="#" class="profile-link-item" id="open-admin-dashboard-btn" style="color: var(--brand-gold); font-weight: 600;"><span class="icon">⚙️</span> Jhariya Owner Portal</a></li>
+                        </ul>
+                        <button class="outline-btn block-btn" id="logout-btn">Log Out</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Shopping Bag / Cart Drawer -->
+    <div class="drawer-overlay" id="cart-drawer-overlay">
+        <div class="drawer drawer-right" id="cart-drawer">
+            <div class="drawer-header">
+                <h3>Shopping Bag (<span class="cart-count">0</span>)</h3>
+                <button class="close-drawer-btn" aria-label="Close Shopping Bag">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="drawer-content cart-drawer-content">
+                <!-- Cart Items Container -->
+                <div class="cart-items-container" id="cart-items-container">
+                    <!-- Dynamically rendered items -->
+                </div>
+
+                <!-- Empty Cart State -->
+                <div class="empty-cart-state" id="empty-cart-state">
+                    <div class="empty-cart-icon">🛍️</div>
+                    <h4>Your shopping bag is empty</h4>
+                    <p>Add some beautiful hand-crafted Kurtis to your wardrobe.</p>
+                    <button class="dark-btn start-shopping-btn">Start Shopping</button>
+                </div>
+            </div>
+            <!-- Cart Footer (Persistent at bottom of drawer) -->
+            <div class="cart-drawer-footer" id="cart-drawer-footer">
+                <div class="subtotal-row">
+                    <span>Subtotal</span>
+                    <span class="subtotal-amount" id="subtotal-amount">₹0</span>
+                </div>
+                <p class="shipping-notice">Shipping and taxes calculated at checkout. Free shipping active!</p>
+                <button class="dark-btn checkout-btn" id="checkout-btn">Proceed to Secure Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Global Search Modal (Full screen overlay) -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-modal-container">
+            <div class="search-modal-header">
+                <form id="search-form" class="search-form-element">
+                    <svg class="search-icon-inside" viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                    <input type="search" id="global-search-input" placeholder="Search for Kurtis, Fabrics, Collections..." autocomplete="off">
+                </form>
+                <button class="close-search-btn" id="close-search-btn" aria-label="Close Search">
+                    <svg viewBox="0 0 24 24" width="28" height="28" stroke="currentColor" stroke-width="1.5" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="search-modal-body">
+                <div class="search-results-block" id="search-results-block">
+                    <!-- Live search results generated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Track Order Dedicated Modal -->
+    <div class="modal-overlay" id="track-modal-overlay">
+        <div class="product-modal track-order-modal">
+            <div class="track-modal-header">
+                <h3>📦 Track Your Order</h3>
+                <button class="close-track-modal-btn" id="close-track-modal-btn" aria-label="Close Track Order">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="track-modal-body">
+                <p class="track-intro-text">Enter your Order ID or AWB Tracking Number to view real-time shipment status and delivery updates.</p>
+                <form id="modal-track-form" class="modal-track-form">
+                    <div class="track-input-group">
+                        <input type="text" id="modal-track-input" placeholder="e.g. JH-2026-9874" autocomplete="off" required>
+                        <button type="submit" class="dark-btn inline-btn">Track Order</button>
+                    </div>
+                </form>
+                <div id="modal-track-recent" class="modal-track-recent hidden"></div>
+                <div id="modal-track-result" class="modal-track-result-box hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Product Quick View / Detail Modal -->
+    <div class="modal-overlay" id="detail-modal-overlay">
+        <div class="product-modal" id="detail-modal">
+            <button class="close-modal-btn" aria-label="Close Product Details">
+                <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal-grid" id="modal-detail-content">
+                <!-- Javascript will inject complete details: image gallery, price, size selector, add to cart, fabric spec, description -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Dedicated Customer Order History Modal -->
+    <div class="modal-overlay" id="order-history-modal-overlay">
+        <div class="product-modal" style="max-width: 680px; border-radius: 12px; overflow: hidden; padding: 0;">
+            <div style="background: var(--brand-burgundy); padding: 18px 24px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="font-family: 'Playfair Display', serif; margin: 0; color: white; font-size: 1.25rem;">📦 My Order History</h3>
+                <button class="close-order-history-modal-btn" id="close-order-history-modal-btn" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1;">×</button>
+            </div>
+            <div style="padding: 24px; max-height: 70vh; overflow-y: auto;" id="order-history-list-container">
+                <!-- Dynamically rendered order history cards -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. Write Review Modal Overlay -->
+    <div class="modal-overlay" id="write-review-modal-overlay">
+        <div class="product-modal" style="max-width: 520px; border-radius: 12px; overflow: hidden; padding: 0;">
+            <div style="background: var(--brand-burgundy); padding: 18px 24px; color: white; display: flex; justify-content: space-between; align-items: center;">
+                <h3 style="font-family: 'Playfair Display', serif; margin: 0; color: white; font-size: 1.25rem;">Write a Review</h3>
+                <button class="close-review-modal-btn" style="background: rgba(255,255,255,0.15); border: none; color: white; width: 32px; height: 32px; border-radius: 50%; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; line-height: 1;">×</button>
+            </div>
+            <form id="write-review-form" style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+                <div class="form-group">
+                    <label style="font-size: 0.8rem; font-weight: 600; color: var(--brand-burgundy); display: block; margin-bottom: 6px;">Your Name *</label>
+                    <input type="text" id="review-customer-name" placeholder="e.g. Ananya Sharma" required style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none; border-radius: 4px;">
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 0.8rem; font-weight: 600; color: var(--brand-burgundy); display: block; margin-bottom: 6px;">Rating *</label>
+                    <div id="star-rating-picker" style="display: flex; gap: 8px; font-size: 1.6rem; cursor: pointer; color: #D6D6D6;">
+                        <span class="star-picker-item active" data-val="1" style="color: var(--brand-gold);">★</span>
+                        <span class="star-picker-item active" data-val="2" style="color: var(--brand-gold);">★</span>
+                        <span class="star-picker-item active" data-val="3" style="color: var(--brand-gold);">★</span>
+                        <span class="star-picker-item active" data-val="4" style="color: var(--brand-gold);">★</span>
+                        <span class="star-picker-item active" data-val="5" style="color: var(--brand-gold);">★</span>
+                    </div>
+                    <input type="hidden" id="review-rating-val" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 0.8rem; font-weight: 600; color: var(--brand-burgundy); display: block; margin-bottom: 6px;">Your Review / Feedback *</label>
+                    <textarea id="review-quote-input" rows="3" placeholder="Share how your outfit fit, fabric softness, or how many compliments you received..." required style="width: 100%; padding: 10px 14px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none; border-radius: 4px; resize: vertical;"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label style="font-size: 0.8rem; font-weight: 600; color: var(--brand-burgundy); display: block; margin-bottom: 6px;">Attach Your Photograph (Optional)</label>
+                    <div id="review-photo-upload-zone" style="border: 2px dashed var(--border-color); padding: 18px; text-align: center; cursor: pointer; border-radius: 6px; background: var(--bg-primary);">
+                        <span style="font-size: 1.5rem;">📷</span>
+                        <p style="margin: 4px 0 0 0; font-size: 0.8rem; color: var(--text-dark);" id="review-photo-prompt">Click to upload your outfit photo</p>
+                        <span style="font-size: 0.7rem; color: var(--text-muted);">PNG, JPG, WEBP formats allowed</span>
+                        <input type="file" id="review-photo-file" accept="image/*" style="display: none;">
+                    </div>
+                    <div id="review-photo-preview" style="margin-top: 10px; display: none; align-items: center; gap: 10px;">
+                        <img id="review-photo-preview-img" src="" alt="Preview" style="width: 60px; height: 60px; object-fit: cover; border-radius: 50%; border: 2px solid var(--brand-gold);">
+                        <button type="button" id="remove-review-photo-btn" style="color: #8B0000; background: none; border: none; font-size: 0.75rem; cursor: pointer; text-decoration: underline;">Remove Photo</button>
+                    </div>
+                </div>
+
+                <button type="submit" class="dark-btn block-btn" style="padding: 14px; font-size: 0.9rem; margin-top: 8px;">Submit Review</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bottom Footer Area -->
+    <footer class="site-footer">
+        
+        <!-- About Us Section (Requested in About us, categories...) -->
+        <section class="about-us-section" id="about-us">
+            <div class="footer-brand-header">
+                <img src="assets/logo.png" alt="Jhariya Brand Logo" class="footer-logo">
+                <h3>About Jhariya</h3>
+            </div>
+            <p class="about-us-text" id="about-us-text">
+                <!-- Injected dynamically -->
+            </p>
+        </section>
+
+        <!-- Main Support Grid -->
+        <div class="footer-main-grid" id="support">
+            <div class="footer-column">
+                <h4>Support Services</h4>
+                <ul class="footer-links">
+                    <li><a href="#track-order" class="scroll-trigger" id="track-order-link">Track Your Order</a></li>
+                    <li><a href="#return-exchange" class="scroll-trigger" id="return-link">Exchange Portal</a></li>
+                    <li><a href="#contact-us" class="scroll-trigger" id="contact-link">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Track Order Mini-Compartment -->
+            <div class="footer-column" id="track-order">
+                <h4>Track Your Order</h4>
+                <p class="column-desc">Enter your Order ID or tracking AWB number to check status instantly.</p>
+                <form id="track-form" class="footer-form">
+                    <input type="text" id="track-input" placeholder="e.g. JH-2026-9874" required>
+                    <button type="submit" class="dark-btn inline-btn">Track</button>
+                </form>
+                <div id="track-result" class="track-result-box hidden"></div>
+            </div>
+
+            <!-- Contact Form Compartment -->
+            <div class="footer-column" id="contact-us">
+                <h4>Connect With Us</h4>
+                <p class="column-desc">Have questions about fabrics, sizes, or custom orders? Write to us!</p>
+                <form id="contact-form" class="footer-form">
+                    <input type="email" id="contact-email" placeholder="Email Address" required>
+                    <textarea id="contact-message" placeholder="Your query..." rows="2" required></textarea>
+                    <button type="submit" class="dark-btn inline-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Custom Accordion for Framed Policies -->
+        <section class="policies-accordion-section">
+            <div class="policies-header">
+                <h4>Policies & FAQ Portal</h4>
+                <p>Everything you need to know about shopping, exchanges, and privacy with Jhariya.</p>
+            </div>
+            
+            <div class="accordion-container">
+                <!-- 1. FAQs -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Frequently Asked Questions (FAQs)</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-content">
+                            <h5>Q: What sizes are available at Jhariya?</h5>
+                            <p>We design sizes from XXS (32 inches chest) through XS, S, M, L, XL, 2XL, 3XL, 4XL, and up to 5XL (54 inches chest). Tap the Size Guide button on any product card to view the complete measurement chart.</p>
+                            
+                            <h5>Q: What materials do you use?</h5>
+                            <p>We source only premium sustainable fabrics. Our collection features Cotton, Pure Cotton, Linen Feel Cotton, and Cotton Silk. All fabrics are pre-shrunk and color-locked.</p>
+                            
+                            <h5>Q: Can I modify or cancel my order?</h5>
+                            <p>Orders can be cancelled or modified within 6 hours of placement. Please email jhariya.ethnic@gmail.com or use the WhatsApp support line immediately with your order reference ID.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Shipping & Delivery Policy -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Shipping & Delivery Policy</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-content">
+                            <p>At Jhariya, we strive to deliver your designer Kurtis safely and as swiftly as possible. Please read our shipping guidelines below:</p>
+                            <ul>
+                                <li><strong>Free Delivery:</strong> All orders above ₹2,000 qualify for complimentary premium shipping throughout India. A flat delivery rate of ₹99 is applicable below this value.</li>
+                                <li><strong>Delivery Timelines:</strong> Orders take 7 to 10 days to reach.</li>
+                                <li><strong>Transit Timings:</strong> It takes 7 to 10 days to reach your destination.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Return & Exchange Policy -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Exchange Policy</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-content">
+                            <p>We want you to love your Jhariya outfit! If it doesn't fit perfectly or isn't exactly as you desired, our exchange process is here to help (Please note: We do not offer returns or refunds; outfits can only be exchanged):</p>
+                            <ul>
+                                <li><strong>7-Day Window:</strong> We offer a 7-day exchange window starting from the date of package delivery.</li>
+                                <li><strong>Condition of Goods:</strong> The Kurti must be unworn, unwashed, and in its original state with all Jhariya tags and boutique boxes intact.</li>
+                                <li><strong>Reverse Pickup:</strong> We arrange a complimentary reverse courier pickup from 95% of pin codes in India. If pickup isn't available, we will request you to self-ship and credit ₹100 back to your account.</li>
+                                <li><strong>Exchange Only:</strong> There is no option for return or refund. You can only exchange the outfit.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Privacy Policy -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Privacy Policy</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-content">
+                            <p>Jhariya ("we", "our", "us") values your trust. This Privacy Policy details how we manage your information:</p>
+                            <p><strong>1. Data Collection:</strong> We collect details you provide during order checkout, account sign-up, and newsletter registration, which includes name, shipping/billing address, phone number, and email.</p>
+                            <p><strong>2. Usage:</strong> Your details are solely used to complete orders, coordinate delivery logistics, secure payments, and occasionally send festive design previews or discount emails. We never lease or sell your personal details to external marketing agencies.</p>
+                            <p><strong>3. Security:</strong> Our website uses Industry-standard Secure Socket Layer (SSL) 256-bit encryption. All financial payments are securely processed by authorized PCI-DSS compliant third-party payment gateways (Razorpay/PayU).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Terms of Service -->
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>Terms of Service</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <div class="inner-content">
+                            <p>Welcome to Jhariya! By accessing this website, you agree to comply with and be bound by the following Terms of Service:</p>
+                            <p><strong>Intellectual Property:</strong> All site designs, creative Kurti descriptions, layout code, branding logos, and handloom photography are the exclusive property of Jhariya protected under Copyright and Trademark laws. Unauthorized reproduction is strictly prohibited.</p>
+                            <p><strong>Product Variations:</strong> Due to the handcrafted nature of hand-block print designs, chikankari embroidery, and handloom silks, minor variations in embroidery patterns or color hue can occur. These are not flaws, but authentic characteristics of artisanal weaving.</p>
+                            <p><strong>Pricing Adjustments:</strong> Jhariya reserves the right to alter pricing catalogs or discontinue particular designs without prior notification.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </footer>
+
+    <!-- 6. Full Screen Jhariya Owner / Admin Portal Dashboard -->
+    <div class="admin-dashboard-overlay" id="admin-dashboard-overlay">
+        <div class="admin-dashboard-container">
+            <!-- Sidebar Navigation Panel -->
+            <aside class="admin-sidebar">
+                <div class="admin-sidebar-header">
+                    <img src="assets/logo.png" alt="Jhariya Logo" class="admin-sidebar-logo">
+                    <h4>JHARIYA</h4>
+                    <span class="admin-badge">Designer Studio</span>
+                </div>
+                <ul class="admin-nav-links">
+                    <li class="active" data-tab="manage-products">
+                        <span class="icon">👗</span> Manage Catalog
+                    </li>
+                    <li data-tab="metrics" onclick="alert('Store performance metrics is unlocked in the Cloud production deployment!')">
+                        <span class="icon">📈</span> Studio Metrics
+                    </li>
+                    <li data-tab="settings">
+                        <span class="icon">🔧</span> Studio Settings
+                    </li>
+                </ul>
+                <button class="admin-logout-btn" id="close-admin-dashboard-btn">
+                    <span class="icon">🚪</span> Exit Portal
+                </button>
+            </aside>
+
+            <!-- Main Work Panel -->
+            <main class="admin-main-panel">
+                <!-- Tab: Manage Catalog -->
+                <div class="admin-tab-content active" id="tab-manage-products">
+                    <header class="admin-panel-header">
+                        <div class="header-titles">
+                            <h2>Designer Catalog Management</h2>
+                            <p>Upload new patterns, manage fabrics, styles, sizing availability, and prices in real time.</p>
+                        </div>
+                        <button class="dark-btn add-kurti-btn" id="open-product-modal-btn">
+                            <span style="font-size: 1.2rem; margin-right: 8px; font-weight: 700;">+</span> Add New Kurti
+                        </button>
+                    </header>
+
+                    <!-- Products Catalog Table -->
+                    <div class="admin-table-container">
+                        <table class="admin-products-table">
+                            <thead>
+                                <tr>
+                                    <th>Thumbnail</th>
+                                    <th>Design Name</th>
+                                    <th>Fabric</th>
+                                    <th>Style Fit</th>
+                                    <th>Price (INR)</th>
+                                    <th>Sizes in Stock</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="admin-products-table-body">
+                                <!-- Javascript will inject listings dynamically -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab: Studio Settings -->
+                <div class="admin-tab-content hidden" id="tab-settings">
+                    <header class="admin-panel-header">
+                        <div class="header-titles">
+                            <h2>Studio Profile & Customization</h2>
+                            <p>Customize your brand settings and footer bio displayed on the storefront.</p>
+                        </div>
+                    </header>
+
+                    <div class="admin-settings-container" style="max-width: 700px; background: #fff; padding: 30px; border-radius: 4px; border: 1.5px solid var(--border-color); margin-top: 20px;">
+                        <form id="admin-settings-form">
+                            <div class="form-group">
+                                <label for="settings-about-us" style="font-family: Montserrat; font-weight: 600; font-size: 0.85rem; color: var(--brand-burgundy); display: block; margin-bottom: 6px;">About Jhariya Brand Bio</label>
+                                <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 8px;">This text will be dynamically updated in the "About Jhariya" section of the footer.</p>
+                                <textarea id="settings-about-us" rows="6" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none; resize: vertical;" placeholder="Type your boutique brand description..."></textarea>
+                            </div>
+                            <div class="form-actions" style="margin-top: 20px;">
+                                <button type="submit" class="dark-btn" style="padding: 12px 24px;">Save Studio Settings</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- 7. Add/Edit Product Modal Dialog Overlay -->
+    <div class="modal-overlay" id="product-form-modal-overlay" style="z-index: 3000;">
+        <div class="product-modal admin-product-form-modal">
+            <div class="drawer-header">
+                <h3 id="product-modal-title">Add New Kurti Listing</h3>
+                <button class="close-modal-btn" id="close-product-modal-btn" aria-label="Close form">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+            <div class="drawer-content">
+                <form id="product-crud-form">
+                    <input type="hidden" id="crud-product-id" value="">
+                    
+                    <div class="form-group">
+                        <label for="crud-title">Kurti Design Name</label>
+                        <input type="text" id="crud-title" required placeholder="e.g. Saffron Gold Block Print A-Line">
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="crud-price">Price (INR ₹)</label>
+                            <input type="number" id="crud-price" required min="1" placeholder="e.g. 1699">
+                        </div>
+                        <div class="form-group">
+                            <label for="crud-fabric">Fabric Material</label>
+                            <input type="text" id="crud-fabric" required placeholder="Example: Linen Feel" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="crud-style">Silhouette / Style Fit</label>
+                            <input type="text" id="crud-style" required placeholder="Example: Short Kurti" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                        <div class="form-group">
+                            <label for="crud-color">Color Name</label>
+                            <input type="text" id="crud-color" placeholder="Example: Pistachio Green" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="crud-description">Product Description</label>
+                        <textarea id="crud-description" placeholder="Describe the design..." rows="3" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none; resize: vertical;"></textarea>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="crud-length">Product Length</label>
+                            <input type="text" id="crud-length" placeholder="Example: 42 Inches" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                        <div class="form-group">
+                            <label for="crud-neck">Neck Type</label>
+                            <input type="text" id="crud-neck" placeholder="Example: V Neck" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="crud-sleeve">Sleeve Type</label>
+                            <input type="text" id="crud-sleeve" placeholder="Example: Bell Sleeve" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                        <div class="form-group">
+                            <label for="crud-fit">Fit Type</label>
+                            <input type="text" id="crud-fit" placeholder="Example: Relaxed Fit" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-row-grid">
+                        <div class="form-group">
+                            <label for="crud-wash">Wash Care</label>
+                            <input type="text" id="crud-wash" placeholder="Example: Dry Clean" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                        <div class="form-group">
+                            <label for="crud-embroidery">Embroidery Type</label>
+                            <input type="text" id="crud-embroidery" placeholder="Example: Hand Work" style="width: 100%; padding: 12px; border: 1.5px solid var(--border-color); font-family: Montserrat; outline: none;">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Available Sizing (Check all in stock)</label>
+                        <div class="crud-sizes-checkbox-row" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px;">
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="XXS"> <span>XXS</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="XS"> <span>XS</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="S" checked> <span>S</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="M" checked> <span>M</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="L" checked> <span>L</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="XL" checked> <span>XL</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="2XL" checked> <span>2XL</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="3XL"> <span>3XL</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="4XL"> <span>4XL</span></label>
+                            <label class="custom-checkbox"><input type="checkbox" name="crud-sizes" value="5XL"> <span>5XL</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Multi-photo upload and URL entry compartment -->
+                    <div class="form-group">
+                        <label>Product Photos (Upload & portrayal of multiple photos)</label>
+                        <div class="upload-drag-zone" id="upload-drag-zone" style="cursor: pointer;">
+                            <span class="upload-icon">📷</span>
+                            <p class="upload-prompt">Drag & Drop photo(s) here, or <strong>Browse Files (Select Multiple)</strong></p>
+                            <span class="upload-spec">PNG, JPG, SVG formats allowed. Select multiple photos at once.</span>
+                            <input type="file" id="crud-image-file" accept="image/*" multiple style="display: none;">
+                        </div>
+                        <div class="form-group" style="margin-top: 10px;">
+                            <label for="crud-image-urls" style="font-size: 0.75rem; color: var(--text-muted); font-weight: 600;">Or Paste Photo URLs (One URL per line for multiple views)</label>
+                            <textarea id="crud-image-urls" placeholder="https://example.com/front-view.jpg&#10;https://example.com/embroidery-view.jpg" rows="2" style="width: 100%; padding: 10px; border: 1.5px solid var(--border-color); font-family: Montserrat; font-size: 0.8rem; outline: none; border-radius: 4px;"></textarea>
+                        </div>
+                        <div id="multi-image-preview-grid" style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;"></div>
+                    </div>
+
+                    <div class="form-actions" style="margin-top: 30px; display: flex; gap: 16px;">
+                        <button type="button" class="outline-btn block-btn" id="cancel-product-modal-btn">Cancel</button>
+                        <button type="submit" class="dark-btn block-btn" id="submit-crud-btn">Save Product</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Razorpay Payment Gateway SDK -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <!-- Core App Logic -->
+    <script src="app.js"></script>
+</body>
+</html>
